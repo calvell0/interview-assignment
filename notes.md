@@ -1,6 +1,7 @@
 # Sprint 1
 
-## Ticket 2: I made it so that the tests will remove the entry they add afterwards, by directly reading/writing to the file since there's no delete functionality built in for the purposes of this project. This would not be best practice normally. 
+## Ticket 2: 
+I made it so that the tests will remove the entry they add afterwards, by directly reading/writing to the file since there's no delete functionality built in for the purposes of this project. This would not be best practice normally. 
 
 
 ## Ticket 3: 

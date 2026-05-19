@@ -1,16 +1,21 @@
-# Ticket 3: 
+# Sprint 1
+
+## Ticket 2: I made it so that the tests will remove the entry they add afterwards, by directly reading/writing to the file since there's no delete functionality built in for the purposes of this project. This would not be best practice normally. 
+
+
+## Ticket 3: 
 - I'm using a non-envelop plugin to handle this because to my understanding, it's not possible to reject the request itself from an envelop plugin. If I were to use an envelop plugin, then I would just be throwing a GQL error, and invalid headers are more of an authorization issue than a GQL issue IMO.
 - had to do some googling around to figure out how to read the operation name since the operationName field isn't populated 
 
-# Ticket 4: 
+## Ticket 4: 
 - needed to make 2 changes to fix request id: 1, add winston formatter that reads from the logger's requestId to the logger constructor. 2, change buildHeaders to build headers during parse stage so that the requestId is available in the context in the execution stage.
 
 
-# Ticket 5: 
+## Ticket 5: 
 - had to change the test executor to pass the client header
 
 
-## Sprint 2 (Bonus)
+# Sprint 2 (Bonus)
 
 - I'm a bit stuck - I think I'm like 75% there but I can't seem to get the query to execute without issues. I'm consistently running into this error: 
  [GraphQLError: Failed to create a gateway request. The request must contain at least one operation.],

@@ -181,4 +181,37 @@ describe("createAddress", () => {
       }
     ));
   })
+});
+
+describe("getNEOFeed", () => {
+  test('Success', async () => {
+    const query = `
+            query GetNEOs($startDate: String!, $endDate: String!) {
+                nearEarthObjects(startDate: $startDate, endDate: $endDate) {
+                  elementCount
+                  objects {
+                    id
+                    name
+                    isPotentiallyHazardousAsteroid
+                    estimatedDiameterMinKm
+                    estimatedDiameterMaxKm
+                    closeApproachDate
+                    relativeVelocityKph
+                    missDistanceKm
+                  }
+                }
+            }
+        `;
+
+    const variables = { startDate: '2015-09-07', endDate: '2015-09-08' };
+
+    const result = await executor({
+      document: parse(query),
+      variables,
+    }) as ResultWithMetadata;
+
+    // console.log(result);
+    expect(result?.data?.nearEarthObjects).toBeTruthy();
+
+  });
 })

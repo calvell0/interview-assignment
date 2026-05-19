@@ -18,7 +18,6 @@ export const validateClient = (): Plugin<ContextType> => {
     },
     onExecute({ args, setResultAndStopExecution }){
         const client = args.contextValue.request.headers.get('client');
-        console.log(client, args.operationName);
         const operation = getOperationAST(args.document)?.operation;
         if (!operation) throw new GraphQLError("Could not determine operation");
 

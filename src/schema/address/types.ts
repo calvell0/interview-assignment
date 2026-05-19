@@ -17,3 +17,8 @@ export type CreateAddressArgs = {
   username: string;
   input: Address;
 }
+
+export type NEOFeedArgs = {
+  startDate: string;
+  endDate: string;
+}

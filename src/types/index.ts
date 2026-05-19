@@ -1,0 +1,8 @@
+import { Logger } from '../logger';
+
+export type ContextType = {
+  requestId: string;
+  logger: Logger;
+  request: Request
+  client: string
+};
